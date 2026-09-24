@@ -1,0 +1,17 @@
+path: ./data
+
+train: train/images
+val: valid/images
+test: test/images
+
+names:
+  0: Broken-Rail
+  1: Corrugation
+  2: Cracks
+  3: Flaking
+  4: Joints
+  5: Missing-Fasteners
+  6: Shelling
+  7: Spalling
+  8: Squats
+  9: Wheel-Burn
