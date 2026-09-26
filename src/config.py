@@ -19,11 +19,13 @@ PATIENCE=10
 TRAIN_NAME="Rail_Defect_Detect"
 TEST_NAME="Rail_Defect_test"
 
+# frontend data
 FRONTEND_DATA_DIR=(
     PROJECT_ROOT
     /"outputs"
     /"frontend_data"
 )
+TEST_METRICS=FRONTEND_DATA_DIR/"test_metrics.json"
 
 SEED=42
 

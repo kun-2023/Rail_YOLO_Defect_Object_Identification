@@ -5,7 +5,7 @@ from src.config import (
     OUTPUT_DIR,
     IMAGE_SIZE,
     DEVICE, TEST_NAME, TRAIN_NAME,
-    FRONTEND_DATA_DIR
+    FRONTEND_DATA_DIR, TEST_METRICS
 )
 
 import json
@@ -20,7 +20,8 @@ def evaluate_model(model_path):
         imgsz=IMAGE_SIZE,
         device=DEVICE,
         project=str(OUTPUT_DIR),
-        name=TEST_NAME
+        name=TEST_NAME,
+        exist_ok=True
     )
 
     return metrics
@@ -47,7 +48,7 @@ if __name__=="__main__":
         /"test_metrics.json"
     )
 
-    with open(metrics_path, "w") as f:
+    with open(TEST_METRICS, "w") as f:
         json.dump(
             test_metrics,
             f,
