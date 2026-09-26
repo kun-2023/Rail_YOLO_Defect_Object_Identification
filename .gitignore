@@ -5,3 +5,8 @@ __pycache__/
 /.rail_venv/
 
 /outputs/
+!/outputs/frontend_data/
+/outputs/frontend_data/*
+!/outputs/frontend_data/test_metrics.json
+!/outputs/frontend_data/images/
+!/outputs/frontend_data/images/*

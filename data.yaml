@@ -1,4 +1,4 @@
-path: ./data
+path: C:/Users/Kun Bi/Desktop/rail_yolo_object_identification/data
 
 train: train/images
 val: valid/images

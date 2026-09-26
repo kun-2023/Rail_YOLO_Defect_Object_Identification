@@ -1,6 +1,8 @@
+--extra-index-url https://download.pytorch.org/whl/cu121
+
 # Data
 numpy==2.3.5
-pandas==3.0.6
+pandas==2.3.3
 scikit-learn==1.9.1
 
 # Visualization
@@ -14,18 +16,17 @@ opencv-python==4.14.0.94
 # Training utilities
 tqdm==4.70.1
 
-# Dataset download 
-roboflow==1.5.0
+
 
 # Explainability
 grad-cam==1.5.7
 
-# openAI API
-openai==3.19.2
+
 python-dotenv==1.2.3
 
 # Jupyter / VS Code notebooks
 ipykernel==7.3.0
+notebook==7.4.7
 
 # PyTorch CUDA
 torch==2.5.1+cu121
@@ -33,3 +34,20 @@ torchvision==0.20.1+cu121
 
 # Yolo
 ultralytics==8.4.161
+
+# mlflow
+mlflow==3.3.2
+
+# dvc
+dvc[s3]==3.67.1
+
+
+# API/ application
+fastapi==0.141.1
+uvicorn==0.52.4
+streamlit==1.61.1
+
+
+# test
+pytest==8.4.2
+httpx==0.28.1
