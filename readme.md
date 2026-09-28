@@ -27,3 +27,10 @@ mlflow server \
  --port 5000 \
  --workers 1
 ```
+
+#### Train model with pipeline and Manually register and promte model
+```bash
+dvc repro
+python -m src.register
+python -m src.promote
+```
