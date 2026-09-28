@@ -27,17 +27,19 @@ def train_model():
     settings.update({"mlflow": True})
 
     # Load pretrained YOLO model
-    model=YOLO(str(PRETRAINED_MODEL))
+    model=YOLO(PRETRAINED_MODEL)
 
     results=model.train(
     data=str(DATA_YAML),
-    epochs=EPOCHS,
+    epochs=3,
     imgsz=IMAGE_SIZE,
     batch=BATCH_SIZE,
     device=DEVICE,
-    patience=PATIENCE,
+    patience=2,
     project=str(OUTPUT_DIR),
-    name=TRAIN_NAME
+    name=TRAIN_NAME,
+    exist_ok=True,
+    seed=SEED,
             )
     
     return results

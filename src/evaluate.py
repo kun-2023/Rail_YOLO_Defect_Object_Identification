@@ -43,10 +43,10 @@ if __name__=="__main__":
         "mAP50_95": float(metrics.box.map)
     }
 
-    metrics_path=(
-        FRONTEND_DATA_DIR
-        /"test_metrics.json"
-    )
+    
+    FRONTEND_DATA_DIR.mkdir(
+        parents=True, 
+        exist_ok=True)
 
     with open(TEST_METRICS, "w") as f:
         json.dump(

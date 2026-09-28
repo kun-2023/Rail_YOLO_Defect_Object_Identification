@@ -10,3 +10,12 @@ __pycache__/
 !/outputs/frontend_data/test_metrics.json
 !/outputs/frontend_data/images/
 !/outputs/frontend_data/images/*
+
+# models
+yolo11s.pt
+/models/
+
+# MLflow
+mlartifacts/
+mlruns/
+mlflow.db

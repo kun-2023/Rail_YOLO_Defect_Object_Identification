@@ -7,7 +7,7 @@ DATA_YAML=PROJECT_ROOT/"data.yaml"
 MODELS_DIR=PROJECT_ROOT/"models"
 OUTPUT_DIR=PROJECT_ROOT/"outputs"/"yolo"
 
-PRETRAINED_MODEL=MODELS_DIR/"yolo11s.pt"
+PRETRAINED_MODEL="yolo11s.pt"
 
 EPOCHS = 50
 IMAGE_SIZE=640
@@ -34,6 +34,6 @@ TRACKING_URI="http://127.0.0.1:5000"
 EXPERIMENT_NAME="railway_defect_detection"
 CANDIDATE_ALIAS="candidate"
 CHAMPION_ALIAS="champion"
-RUN_NAME="yolo"
+RUN_NAME="register_yolo"
 REGISTERED_MODEL_NAME="railway_defect_yolo"
 ARTIFACT_URI=(PROJECT_ROOT/"mlartifacts").as_uri()
