@@ -5,12 +5,13 @@ class RailDefectDetector:
     def __init__(self, model_path):
         self.model=YOLO(str(model_path))
 
-    def predict(self, image_path, confidence=0.25):
+    def predict(self, image, confidence=0.25):
         results=self.model.predict(
-            source=str(image_path),
+            source=image,
             imgsz=IMAGE_SIZE,
             conf=confidence,
-            device=DEVICE
+            device=DEVICE,
+            verbose=False
         )
 
         return results

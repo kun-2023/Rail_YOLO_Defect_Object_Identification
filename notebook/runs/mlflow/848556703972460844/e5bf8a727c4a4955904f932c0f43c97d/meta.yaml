@@ -1,0 +1,14 @@
+artifact_uri: file:c:/Users/Kun Bi/Desktop/rail_yolo_object_identification/notebook/runs/mlflow/848556703972460844/e5bf8a727c4a4955904f932c0f43c97d/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '848556703972460844'
+lifecycle_stage: active
+run_id: e5bf8a727c4a4955904f932c0f43c97d
+run_name: Rail_Defect_Detect-2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1790640367492
+status: 1
+tags: []
+user_id: Kun Bi

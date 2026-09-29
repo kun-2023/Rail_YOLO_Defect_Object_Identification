@@ -34,3 +34,19 @@ dvc repro
 python -m src.register
 python -m src.promote
 ```
+
+#### AWS authentication
+```bash
+aws sts get-caller-identity
+dvc remote add -d storage s3://rail-yolo-detection
+dvc remote list
+dvc push
+aws s3 ls s3://rail-yolo-detection
+git add .dvc/config
+git commit -m "configure DVC S3 remote
+```
+
+#### RUN API
+```bash
+python -m uvicorn api.main:app --reload
+```

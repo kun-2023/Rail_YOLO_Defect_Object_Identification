@@ -1,0 +1,81 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python -m src.train
+    deps:
+    - path: data
+      hash: md5
+      md5: 610204bc7172f43818807f6d0c7c6b9d.dir
+      size: 480901086
+      nfiles: 15317
+    - path: data.yaml
+      hash: md5
+      md5: 6b264e0e765297e95e7e7b6365306cfe
+      size: 297
+    - path: src/config.py
+      hash: md5
+      md5: 939a6a82217036bebd381fb26c0280d9
+      size: 798
+    - path: src/train.py
+      hash: md5
+      md5: 1d992ea83240b69ded6c104d3c436e55
+      size: 1050
+    outs:
+    - path: outputs/yolo/rail_Defect_Detect/weights/best.pt
+      hash: md5
+      md5: 2a14714a165036f36f24c9070ebdfe82
+      size: 19178131
+  evaluate:
+    cmd: python -m src.evaluate
+    deps:
+    - path: data.yaml
+      hash: md5
+      md5: 6b264e0e765297e95e7e7b6365306cfe
+      size: 297
+    - path: outputs/yolo/rail_Defect_Detect/weights/best.pt
+      hash: md5
+      md5: 2a14714a165036f36f24c9070ebdfe82
+      size: 19178131
+    - path: src/config.py
+      hash: md5
+      md5: 939a6a82217036bebd381fb26c0280d9
+      size: 798
+    - path: src/evaluate.py
+      hash: md5
+      md5: df5a33780eac4ed06d88260a025a93cc
+      size: 1146
+    outs:
+    - path: outputs/frontend_data/test_metrics.json
+      hash: md5
+      md5: 50133c95ded96efd36f5962a8031d1e7
+      size: 149
+  frontend_data:
+    cmd: python -m src.frontend_data
+    deps:
+    - path: data/test
+      hash: md5
+      md5: c3ec0fde485f099ab1689b8ac410a866.dir
+      size: 21333688
+      nfiles: 621
+    - path: outputs/yolo/rail_Defect_Detect/weights/best.pt
+      hash: md5
+      md5: 2a14714a165036f36f24c9070ebdfe82
+      size: 19178131
+    - path: src/config.py
+      hash: md5
+      md5: 939a6a82217036bebd381fb26c0280d9
+      size: 798
+    - path: src/frontend_data.py
+      hash: md5
+      md5: c6decd8133325024d2d84161f392306b
+      size: 900
+    - path: src/inference.py
+      hash: md5
+      md5: 7ace7e7b16523531fefded012e429485
+      size: 828
+    outs:
+    - path: outputs/frontend_data/images
+      hash: md5
+      md5: c2765ae205dc9cebabae40a59e7f4cb0.dir
+      size: 670048
+      nfiles: 5

@@ -6,7 +6,7 @@ from src.config import (
     DATA_YAML, PRETRAINED_MODEL, OUTPUT_DIR,
     EPOCHS, IMAGE_SIZE, BATCH_SIZE, DEVICE,
     PATIENCE, TRAIN_NAME, TRACKING_URI, EXPERIMENT_NAME,
-    SEED, RUN_NAME
+    SEED, RUN_NAME, WORKERS
 )
 import mlflow
 
@@ -31,16 +31,19 @@ def train_model():
 
     results=model.train(
     data=str(DATA_YAML),
-    epochs=3,
+    epochs=EPOCHS,
     imgsz=IMAGE_SIZE,
     batch=BATCH_SIZE,
     device=DEVICE,
-    patience=2,
+    amp=True,
+    patience=PATIENCE,
     project=str(OUTPUT_DIR),
     name=TRAIN_NAME,
     exist_ok=True,
+    cache=True,
+    workers=WORKERS,
     seed=SEED,
-            )
+    deterministic=True)
     
     return results
 
