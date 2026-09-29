@@ -79,8 +79,8 @@ async def predict(
                     "bbox": box
                 }
             )
-        return {
-            "detections": detections
-        }
+    return {
+        "detections": detections
+    }
 
 
