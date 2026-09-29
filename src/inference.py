@@ -2,15 +2,16 @@ from ultralytics import YOLO
 from src.config import PROJECT_ROOT,IMAGE_SIZE, DEVICE, OUTPUT_DIR, TRAIN_NAME
 
 class RailDefectDetector:
-    def __init__(self, model_path):
+    def __init__(self, model_path, device):
         self.model=YOLO(str(model_path))
+        self.device=device
 
     def predict(self, image, confidence=0.25):
         results=self.model.predict(
             source=image,
             imgsz=IMAGE_SIZE,
             conf=confidence,
-            device=DEVICE,
+            device=self.device,
             verbose=False
         )
 

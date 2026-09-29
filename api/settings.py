@@ -11,3 +11,4 @@ MODEL_PATH=PROJECT_ROOT/os.getenv(
 DEFAULT_CONFIDENCE=float(
     os.getenv("DEFAULT_CONFIDENCE","0.25")
 )
+API_DEVICE=os.getenv("API_DEVICE", "cpu")
