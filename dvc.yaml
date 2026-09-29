@@ -5,18 +5,18 @@ stages:
     deps:
       - src/train.py
       - src/config.py
-      - data.yaml
-      - data
+      - data_7class.yaml
+      - data_7class
     outs:
-      - outputs/yolo/rail_Defect_Detect/weights/best.pt
+      - outputs/yolo/Rail_Defect_Detect/weights/best.pt
 
   evaluate:
     cmd: python -m src.evaluate
     deps:
       - src/evaluate.py
       - src/config.py
-      - data.yaml
-      - outputs/yolo/rail_Defect_Detect/weights/best.pt
+      - data_7class.yaml
+      - outputs/yolo/Rail_Defect_Detect/weights/best.pt
     metrics:
       - outputs/frontend_data/test_metrics.json: 
           cache: false
@@ -27,8 +27,8 @@ stages:
       - src/frontend_data.py
       - src/inference.py
       - src/config.py
-      - outputs/yolo/rail_Defect_Detect/weights/best.pt
-      - data/test  
+      - outputs/yolo/Rail_Defect_Detect/weights/best.pt
+      - data_7class/test/images  
     outs:
       - outputs/frontend_data/images
 

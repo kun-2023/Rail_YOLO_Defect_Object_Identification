@@ -46,7 +46,8 @@ git add .dvc/config
 git commit -m "configure DVC S3 remote
 ```
 
-#### RUN API
+#### RUN API Server
 ```bash
 python -m uvicorn api.main:app --reload
 ```
+

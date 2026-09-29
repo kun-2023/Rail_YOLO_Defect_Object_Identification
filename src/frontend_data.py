@@ -1,10 +1,10 @@
 import random
-from src.config import PROJECT_ROOT, OUTPUT_DIR, TRAIN_NAME
+from src.config import PROJECT_ROOT, OUTPUT_DIR, TRAIN_NAME, DEVICE
 from src.inference import RailDefectDetector
 
 
 
-test_dir=PROJECT_ROOT/"data/test/images"
+test_dir=PROJECT_ROOT/"data_7class/test/images"
 test_images=[
     image for image in test_dir.iterdir() 
     if image.suffix.lower()==".jpg"]
@@ -30,7 +30,7 @@ frontend_image_dir.mkdir(
 
 #### Make predition with model
 model_path=OUTPUT_DIR/TRAIN_NAME/"weights"/"best.pt"
-model=RailDefectDetector(model_path)
+model=RailDefectDetector(model_path, DEVICE)
 
 # predict 5 images
 for image in sample_images:

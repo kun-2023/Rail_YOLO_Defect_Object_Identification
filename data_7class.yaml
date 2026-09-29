@@ -1,0 +1,14 @@
+path: C:/Users/Kun Bi/Desktop/rail_yolo_object_identification/data_7class
+
+train: train/images
+val: valid/images
+test: test/images
+
+names:
+  0: Corrugation
+  1: Cracks
+  2: Flaking
+  3: Shelling
+  4: Spalling
+  5: Squats
+  6: Wheel-Burn

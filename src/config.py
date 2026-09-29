@@ -2,7 +2,7 @@ from pathlib import Path
 
 PROJECT_ROOT=Path(__file__).resolve().parent.parent
 
-DATA_YAML=PROJECT_ROOT/"data.yaml"
+DATA_YAML=PROJECT_ROOT/"data_7class.yaml"
 
 MODELS_DIR=PROJECT_ROOT/"models"
 OUTPUT_DIR=PROJECT_ROOT/"outputs"/"yolo"
@@ -17,8 +17,8 @@ BATCH_SIZE=8
 DEVICE=0
 PATIENCE=3
 WORKERS=8
-TRAIN_NAME="Rail_Defect_Detect"
-TEST_NAME="Rail_Defect_test"
+TRAIN_NAME="Rail_Defect_Detect_7class"
+TEST_NAME="Rail_Defect_test_7class"
 
 # frontend data
 FRONTEND_DATA_DIR=(
@@ -32,11 +32,11 @@ TEST_METRICS=FRONTEND_DATA_DIR/"test_metrics.json"
 
 # MLFLOW
 TRACKING_URI="http://127.0.0.1:5000"
-EXPERIMENT_NAME="railway_defect_detection"
+EXPERIMENT_NAME="railway_defect_detection_7class"
 CANDIDATE_ALIAS="candidate"
 CHAMPION_ALIAS="champion"
 RUN_NAME="register_yolo"
-REGISTERED_MODEL_NAME="railway_defect_yolo"
+REGISTERED_MODEL_NAME="railway_defect_yolo_7class"
 ARTIFACT_URI=(PROJECT_ROOT/"mlartifacts").as_uri()
 
 # Model Path
