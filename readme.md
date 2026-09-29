@@ -51,3 +51,9 @@ git commit -m "configure DVC S3 remote
 python -m uvicorn api.main:app --reload
 ```
 
+#### Run dockerfile
+```bash
+docker compose build
+docker compose up
+docker compose down
+```

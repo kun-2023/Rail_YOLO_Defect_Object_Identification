@@ -1,0 +1,32 @@
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+
+    container_name: railway-yolo-api
+
+    ports:
+      - "8000:8000"
+
+    enviroment:
+      API_DEVICE: cpu
+      MODEL_PATH: /app/models/best.pt
+
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+
+    container_name: railway-yolo-streamlit
+
+    ports:
+      - "8501:8501"
+
+    enviroment:
+      API_URL: http://api:8000/predict
+
+    depends_on:
+      - api
