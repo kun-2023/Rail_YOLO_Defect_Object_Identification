@@ -40,7 +40,7 @@ def train_model():
     project=str(OUTPUT_DIR),
     name=TRAIN_NAME,
     exist_ok=True,
-    cache=True,
+    cache=False,
     workers=WORKERS,
     seed=SEED,
     deterministic=True)

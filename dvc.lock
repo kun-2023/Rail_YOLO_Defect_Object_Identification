@@ -3,43 +3,43 @@ stages:
   train:
     cmd: python -m src.train
     deps:
-    - path: data
+    - path: data_7class
       hash: md5
-      md5: 610204bc7172f43818807f6d0c7c6b9d.dir
-      size: 480901086
-      nfiles: 15317
-    - path: data.yaml
+      md5: c0a3e455ce7791f84b045e0138365931.dir
+      size: 442709256
+      nfiles: 14289
+    - path: data_7class.yaml
       hash: md5
-      md5: 6b264e0e765297e95e7e7b6365306cfe
-      size: 297
+      md5: 4afc1302d8d72084990812c27fd4db60
+      size: 251
     - path: src/config.py
       hash: md5
-      md5: 939a6a82217036bebd381fb26c0280d9
-      size: 798
+      md5: f0806c401733ef89d41991efe6e8df68
+      size: 959
     - path: src/train.py
       hash: md5
-      md5: 1d992ea83240b69ded6c104d3c436e55
-      size: 1050
+      md5: e30ac2f9924e9751f66ee35c89536e7e
+      size: 1136
     outs:
-    - path: outputs/yolo/rail_Defect_Detect/weights/best.pt
+    - path: outputs/yolo/Rail_Defect_Detect_7class/weights/best.pt
       hash: md5
-      md5: 2a14714a165036f36f24c9070ebdfe82
-      size: 19178131
+      md5: 1b6fd4ed313b6b7d43ca20ae72b2fc7b
+      size: 20319742
   evaluate:
     cmd: python -m src.evaluate
     deps:
-    - path: data.yaml
+    - path: data_7class.yaml
       hash: md5
-      md5: 6b264e0e765297e95e7e7b6365306cfe
-      size: 297
-    - path: outputs/yolo/rail_Defect_Detect/weights/best.pt
+      md5: 4afc1302d8d72084990812c27fd4db60
+      size: 251
+    - path: outputs/yolo/Rail_Defect_Detect_7class/weights/best.pt
       hash: md5
-      md5: 2a14714a165036f36f24c9070ebdfe82
-      size: 19178131
+      md5: 1b6fd4ed313b6b7d43ca20ae72b2fc7b
+      size: 20319742
     - path: src/config.py
       hash: md5
-      md5: 939a6a82217036bebd381fb26c0280d9
-      size: 798
+      md5: f0806c401733ef89d41991efe6e8df68
+      size: 959
     - path: src/evaluate.py
       hash: md5
       md5: df5a33780eac4ed06d88260a025a93cc
@@ -47,35 +47,35 @@ stages:
     outs:
     - path: outputs/frontend_data/test_metrics.json
       hash: md5
-      md5: 50133c95ded96efd36f5962a8031d1e7
-      size: 149
+      md5: 36799bbf5ac9d1ce80a1be73bc0c891f
+      size: 150
   frontend_data:
     cmd: python -m src.frontend_data
     deps:
-    - path: data/test
+    - path: data_7class/test/images
       hash: md5
-      md5: c3ec0fde485f099ab1689b8ac410a866.dir
-      size: 21333688
-      nfiles: 621
-    - path: outputs/yolo/rail_Defect_Detect/weights/best.pt
+      md5: b6be3a310ca9cacb130550c436fdfe55.dir
+      size: 19726084
+      nfiles: 291
+    - path: outputs/yolo/Rail_Defect_Detect_7class/weights/best.pt
       hash: md5
-      md5: 2a14714a165036f36f24c9070ebdfe82
-      size: 19178131
+      md5: 1b6fd4ed313b6b7d43ca20ae72b2fc7b
+      size: 20319742
     - path: src/config.py
       hash: md5
-      md5: 939a6a82217036bebd381fb26c0280d9
-      size: 798
+      md5: f0806c401733ef89d41991efe6e8df68
+      size: 959
     - path: src/frontend_data.py
       hash: md5
-      md5: c6decd8133325024d2d84161f392306b
-      size: 900
+      md5: 741906fc3f66f8bc65d8491ecbc90000
+      size: 923
     - path: src/inference.py
       hash: md5
-      md5: 7ace7e7b16523531fefded012e429485
-      size: 828
+      md5: 494d1b1c24943de24f7cc811004449e0
+      size: 1003
     outs:
     - path: outputs/frontend_data/images
       hash: md5
-      md5: c2765ae205dc9cebabae40a59e7f4cb0.dir
-      size: 670048
+      md5: a9bbc2432125afa2b917913aa860a87b.dir
+      size: 702989
       nfiles: 5
