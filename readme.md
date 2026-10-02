@@ -33,6 +33,9 @@ mlflow server \
 dvc repro
 python -m src.register
 python -m src.promote
+dvc push
+git add dvc.yaml dvc.lock
+git commit -m "update trained model"
 ```
 
 #### AWS authentication
@@ -55,5 +58,36 @@ python -m uvicorn api.main:app --reload
 ```bash
 docker compose build
 docker compose up
+# docker compose up --build
 docker compose down
+```
+
+#### Run apps locally with docker; open Docker desktop
+```bash
+git clone ...
+cd rail_yolo_object_identification
+dvc pull
+docker compose up --build
+```
+<p>Then open http://localhost:8501</p>
+
+#### Run apps without dockers
+```bash
+git clone <repo-url>
+cd rail_yolo_object_idnetification
+python -m venv .venv
+source .venv/Scripts/activate
+pip install -r requirements.txt
+dvc pull
+
+# backend
+python -m uvicorn api.main:app --reload
+# front end in another terminal bash
+streamlit run streamlit/app.py
+# then open http://localhost:8501
+```
+
+#### Run tests
+```bash
+pytest -v
 ```

@@ -10,7 +10,7 @@ services:
     ports:
       - "8000:8000"
 
-    enviroment:
+    environment:
       API_DEVICE: cpu
       MODEL_PATH: /app/models/best.pt
 
@@ -25,7 +25,7 @@ services:
     ports:
       - "8501:8501"
 
-    enviroment:
+    environment:
       API_URL: http://api:8000/predict
 
     depends_on:

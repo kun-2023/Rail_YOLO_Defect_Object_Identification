@@ -1,0 +1,56 @@
+# Virtual environment
+.rail_venv/
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Git
+.git/
+.gitignore
+
+# DVC cache
+.dvc/cache/
+
+# Jupyter
+.ipynb_checkpoints/
+notebook/
+notebooks/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Tests
+.pytest_cache/
+.coverage
+htmlcov/
+
+# MLflow
+mlruns/
+mlartifacts/
+mlflow.db
+
+# Training data
+data/
+
+# Training outputs we do NOT need at runtime
+outputs/yolo/**/train*
+outputs/yolo/**/val*
+outputs/yolo/**/test*
+outputs/yolo/**/*.png
+outputs/yolo/**/*.jpg
+outputs/yolo/**/*.csv
+
+# Logs
+*.log
+
+# Environment secrets
+.env
+.env.*

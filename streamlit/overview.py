@@ -3,7 +3,7 @@ import json
 import streamlit as st
 import pandas as pd
 
-PROJECT_ROOT=Path(__file__).resolve().parents.parents
+PROJECT_ROOT=Path(__file__).resolve().parent.parent
 TEST_METRICS_PATH=(PROJECT_ROOT/"outputs/frontend_data/test_metrics.json")
 
 def show_overview():
@@ -29,7 +29,7 @@ def show_overview():
 
     st.subheader("Tech Stacks")
     st.write("""
-    Python, Pandas, PyTorch, Yolo11s, MLflow, DVC, Git/GitHub, FastAPI,
+    Python, Pandas, PyTorch, Yolo26s, MLflow, DVC, Git/GitHub, FastAPI,
     Docker, Streamlit, AWS, ECR, ECS, GitHub Actions, CI/CD Pipeline,
     Pytest.
     """)
@@ -37,7 +37,7 @@ def show_overview():
     with open(TEST_METRICS_PATH, "r") as file:
         metrics=json.load(file)
     col1, col2, col3, col4=st.columns(4)
-    col1.metrics("precision", f"{metrics["precision"]:.2%}")
-    col2.metrics("recall", f"{metrics["recall"]:.2%}")
-    col3.metrics("mAP50", f"{metrics["mAP50"]:.2%}")
-    col4.metrics("mAP50_95", f"{metrics["mAP50_95"]:.2%}")
+    col1.metric("precision", f"{metrics['precision']:.2%}")
+    col2.metric("recall", f"{metrics['recall']:.2%}")
+    col3.metric("mAP50", f"{metrics['mAP50']:.2%}")
+    col4.metric("mAP50_95", f"{metrics['mAP50_95']:.2%}")
