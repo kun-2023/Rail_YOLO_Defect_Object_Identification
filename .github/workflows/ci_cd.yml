@@ -51,12 +51,6 @@ jobs:
         run: |
           dvc pull outputs/yolo/Rail_Defect_Detect_7class/weights/best.pt
 
-      - name: Pull Streamlit demo images with DVC
-        run: |
-          dvc pull outputs/frontend_data/images 
-          
-
-
       - name: Run tests
         run: |
           python -m pytest -v
