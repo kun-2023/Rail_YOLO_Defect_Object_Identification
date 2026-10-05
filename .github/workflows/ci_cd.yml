@@ -13,7 +13,7 @@ env:
   ECR_API_REPOSITORY: railway-defect-api
   ECR_STREAMLIT_REPOSITORY: railway-defect-streamlit
 
-  ECS_CLUSTER: railway_defect_cluster
+  ECS_CLUSTER: railway-defect-cluster
   ECS_SERVICE: railway-defect-service
 
 jobs:
