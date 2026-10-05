@@ -16,7 +16,7 @@ def show_overview():
         app can identify 7 categories of defects from railway tracks 
         including Corrugation, Cracks, Flaking, Shelling, Spalling, 
         Squats, Wheel-Burn. The model was trained with a pretrained 
-        model named Yolo11s on 6260 images and tested on 310 images.
+        model named Yolo26s on 6260 images and tested on 310 images.
         
         When an image of railway tracks submitted to the app, it will 
         return the same image with small boxes drawn upon defects with 
