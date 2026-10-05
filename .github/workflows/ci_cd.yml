@@ -89,6 +89,8 @@ jobs:
       - name: Pull streamlit images with DVC
         run: |
           dvc pull outputs/frontend_data/images
+          dvc pull outputs/frontend_data/try_it_out_image
+          dvc pull outputs/frontend_data/test_metrics.json
 
       - name: Login to Amazon ECR
         id: login-ecr

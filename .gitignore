@@ -4,12 +4,16 @@ __pycache__/
 *.pyc
 /.rail_venv/
 
-/outputs/
+/outputs/*
 !/outputs/frontend_data/
+
 /outputs/frontend_data/*
 !/outputs/frontend_data/test_metrics.json
+
 !/outputs/frontend_data/images/
 !/outputs/frontend_data/images/*
+!/outputs/frontend_data/try_it_out_image/
+!/outputs/frontend_data/try_it_out_image/*
 
 # models
 yolo11s.pt

@@ -31,5 +31,6 @@ stages:
       - data_7class/test/images  
     outs:
       - outputs/frontend_data/images
+      - outputs/frontend_data/try_it_out_image
 
   
