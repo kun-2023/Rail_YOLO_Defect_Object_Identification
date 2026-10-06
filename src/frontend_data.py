@@ -1,4 +1,5 @@
 import random
+import shutil
 from src.config import PROJECT_ROOT, OUTPUT_DIR, TRAIN_NAME, DEVICE
 from src.inference import RailDefectDetector
 
@@ -27,6 +28,18 @@ frontend_image_dir.mkdir(
     parents=True,
     exist_ok=True
 )
+
+try_it_out_dir=(
+    PROJECT_ROOT
+    / "outputs"
+    / "frontend_data"
+    / "try_it_out_image"
+)
+
+try_it_out_dir.mkdir(parents=True, exist_ok=True)
+
+
+
 
 #### Make predition with model
 model_path=OUTPUT_DIR/TRAIN_NAME/"weights"/"best.pt"
