@@ -98,12 +98,5 @@ dvc repro
 python -m src.register
 python -m src.promote
 
-# 4 push dvc artifacts to S3
-dvc push
-
-# 5 push dvc metadata to github
-git add dvc.yaml dvc.lock
-git commit -m "update trained model"
-git push
 ```
 `Thanks for Reading`
