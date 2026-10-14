@@ -37,16 +37,19 @@ pip install torch==2.5.1+cu121 torchvision==0.20.1+cu121 --index-url https://dow
 # Install libraries
 pip install -r requirements.txt
 
-# 4 Download Data, Models and other outputs from AWS s3
+# 4 clone .env file
+cp .env.example .env
+
+# 5 Download Data, Models and other outputs from AWS s3
 dvc pull
 
-# 5 Build Docker Image
+# 6 Build Docker Image
 # Turn on your Docker Desktop before proceeding
 docker compose up --build -d
 
-# 6 Then type http://localhost:8501 at Chrome browser or any other browser of your choice
+# 7 Then type http://localhost:8501 at Chrome browser or any other browser of your choice
 
-# 7 After finishing inspecting the app, remove docker containers and networks
+# 8 After finishing inspecting the app, remove docker containers and networks
 docker compose down
 ```
 #### Option 2: Run apps without dockers
@@ -66,20 +69,23 @@ pip install torch==2.5.1+cu121 torchvision==0.20.1+cu121 --index-url https://dow
 # Install libraries
 pip install -r requirements.txt
 
-# 4 Download Data, Models and other outputs from AWS s3
+# 4 clone .env file
+cp .env.example .env
+
+# 5 Download Data, Models and other outputs from AWS s3
 dvc pull
 
-# 5 Turn on backend server
+# 6 Turn on backend server
 python -m uvicorn api.main:app --reload
 
-# 6 front end in another terminal bash
+# 7 front end in another terminal bash
 streamlit run streamlit/app.py
 # then click open http://localhost:8501
 ```
 
 ### How to retrain Models with DVC pipeline
 ```bash
-# Assuming The first 4 steps from either option 1 or option 2 are finished
+# Assuming The first 5 steps from either option 1 or option 2 are finished
 
 # 1 Turn on MLflow server
 mlflow server \
