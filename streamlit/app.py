@@ -8,6 +8,13 @@ st.set_page_config(
     layout="wide"
 )
 
+# Github Repository Button
+st.sidebar.link_button(
+    "Go to GitHub Repo",
+    "https://github.com/kun-2023/Rail_YOLO_Defect_Object_Identification",
+    type="primary"
+)
+
 st.markdown(
     """
     <style>

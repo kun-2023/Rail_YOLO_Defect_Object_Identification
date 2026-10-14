@@ -11,7 +11,7 @@ TRY_IT_OUT_FOLDER=(
     PROJECT_ROOT/"outputs/frontend_data/try_it_out_image"
 )
 
-API_URL=os.getenv("API_URL","http://api:8000/predict")
+BASE_API_URL=os.getenv("BASE_API_URL","http://127.0.0.1:8000")
 
 def show_prediction():
     st.title("Rail Defect Live Prediction")
@@ -114,7 +114,7 @@ def show_prediction():
         }
 
         try:
-            response=requests.post(API_URL, 
+            response=requests.post(f"{BASE_API_URL}/predict", 
                                files=files, 
                                params=params)
 
